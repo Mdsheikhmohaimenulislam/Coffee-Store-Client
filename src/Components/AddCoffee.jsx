@@ -35,8 +35,8 @@ const AddCoffee = () => {
       <Link
         rel="noopener noreferrer"
         to="/"
-        className="btn ml-13 text-white  border mt-20 mb-2 border border-[#331A15]
-               bg-[#D2B48C] text-[#331A15]"
+        className="btn ml-13 text-white  border mt-20 mb-2  border-[#331A15]
+               bg-[#D2B48C] "
       >
         Back to homepage
       </Link>

@@ -1,7 +1,7 @@
 import React from "react";
 
 const CoffeeCupCard = ({ singleCup }) => {
-  console.log(singleCup);
+
 
   return (
     <div>

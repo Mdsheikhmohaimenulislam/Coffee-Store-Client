@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import CoffeesCard from "../Pages/CoffeesCard";
 import CoffeeCup from "./CoffeeCup";
+import Hero from "./Hero";
+import MiniHero from "./MiniHero";
 
 const Home = () => {
   const loadCoffees = useLoaderData();
@@ -10,6 +12,8 @@ const Home = () => {
 
   return (
     <>
+    <Hero/>
+    <MiniHero/>
       <div className="mt-20">
         <div className="text-center space-y-2">
           <p>--- Sip & Savor ---</p>
