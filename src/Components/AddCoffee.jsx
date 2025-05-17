@@ -10,7 +10,7 @@ const AddCoffee = () => {
     const newCoffee = Object.fromEntries(formData.entries());
 
     // Send Coffee data to the DB
-    fetch("http://localhost:5000/coffees", {
+    fetch("https://coffee-store-server-sigma-five.vercel.app/coffees", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -26,7 +26,7 @@ const AddCoffee = () => {
         }
       });
 
-      // page reload 
+    // page reload
     location.reload();
   };
 

@@ -19,7 +19,7 @@ const CoffeesCard = ({ coffee, coffees, setCoffees }) => {
       console.log(result.isConfirmed);
 
       // Start deleting the coffee
-      fetch(`http://localhost:5000/coffees/${id}`, {
+      fetch(`https://coffee-store-server-sigma-five.vercel.app/coffees/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -44,8 +44,7 @@ const CoffeesCard = ({ coffee, coffees, setCoffees }) => {
   };
 
   return (
-    <div
-    >
+    <div>
       <div className="w-5/6 mx-auto bg-base-200 p-4 rounded-lg shadow-md">
         <div className="flex items-center justify-between">
           {/* Image */}

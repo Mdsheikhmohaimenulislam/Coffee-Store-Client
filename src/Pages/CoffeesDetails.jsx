@@ -26,8 +26,8 @@ const CoffeesDetails = () => {
       <Link
         rel="noopener noreferrer"
         to="/"
-        className="btn border text-white mt-20 mb-2 border border-[#331A15]
-               bg-[#D2B48C] text-[#331A15]"
+        className="btn border text-white mt-20 mb-2  border-[#331A15]
+               bg-[#D2B48C] "
       >
         Back to homepage
       </Link>
