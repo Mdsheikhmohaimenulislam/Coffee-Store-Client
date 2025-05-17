@@ -1,15 +1,12 @@
 import Swal from "sweetalert2";
 import { AuthContext } from "../Context/AuthContext";
 
-import { use, useEffect, useState } from "react";
-
+import { useEffect, useState } from "react";
 
 
 const Users = () => {
-
-
   const [users, setUsers] = useState([]);
-  const { handleDeleteAuth } = use(AuthContext);
+  // const { handleDeleteAuth } = use(AuthContext);
 
   useEffect(() => {
     fetch("https://coffee-store-server-sigma-five.vercel.app/users")
@@ -19,7 +16,10 @@ const Users = () => {
       });
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDelete = (user) => {
+
+    const { _id } = user;
+
 
     Swal.fire({
       title: "Are you sure?",
@@ -33,29 +33,26 @@ const Users = () => {
 
 
 
+
       if (result.isConfirmed) {
-        fetch(`https://coffee-store-server-sigma-five.vercel.app/users/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://coffee-store-server-sigma-five.vercel.app/users/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
-              const remainingUsers = users.filter((user) => user._id !== id);
+            
+              const remainingUsers = users.filter((user) => user._id !== _id);
               setUsers(remainingUsers);
 
-
- 
-
+              
               //! TODO Delete user from firebase
+              // uid ar jono input field make then call
+              // fetch('/localhost:5000/users')
 
-
-              handleDeleteAuth()
-                .then((result) => {
-                  console.log(result);
-                })
-                .catch((error) => {
-                  console.log(error);
-                });
 
               Swal.fire({
                 title: "Deleted!",
@@ -113,7 +110,7 @@ const Users = () => {
                   <button className="btn btn-ghost btn-xs">V</button>
                   <button className="btn btn-ghost btn-xs">E</button>
                   <button
-                    onClick={() => handleDelete(user._id)}
+                    onClick={() => handleDelete(user)}
                     className="btn btn-ghost btn-xs"
                   >
                     X
